@@ -125,6 +125,9 @@ if (!defined('WAREHOUSE_PHP')) {
 							}
 						</script>";
 
+					echo '<script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>';
+                    echo '<script src="https://files.bpcontent.cloud/2025/12/03/11/20251203110655-G99OSWJB.js" defer></script>';
+
 //					<link rel='stylesheet' type='text/css' href='styles/Help.css'>";
 //                echo "<link rel=stylesheet type=text/css href=styles/Calendar.css>";
                 echo "</head>";
