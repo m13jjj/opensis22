@@ -108,6 +108,7 @@ if ($dbconn->connect_errno != 0) {
     $qr = $dbconn->query("SHOW VARIABLES LIKE 'sql_mode'");
     $res = $qr->fetch_assoc();
     $res_arr = explode(',', $res['Value']);
+    /*
     if (in_array('STRICT_TRANS_TABLES', $res_arr)) {
         $err = '<!DOCTYPE html>
         <html lang="en">
@@ -151,6 +152,7 @@ if ($dbconn->connect_errno != 0) {
 
         exit($err);
     }
+    */
 }
 
 if (clean_param($_REQUEST['mod'], PARAM_ALPHAMOD) == 'upgrade') {
