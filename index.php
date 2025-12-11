@@ -29,8 +29,19 @@
 //declare(strict_types=1);
 error_reporting(0);
 
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = 443;
+}
+
+// Configuración de sesiones optimizada para Railway
 ini_set('session.cookie_httponly', '1');
-ini_set('session.cookie_samesite', 'Strict');
+ini_set('session.cookie_samesite', 'Lax');  // Cambio de Strict a Lax
+ini_set('session.use_strict_mode', '1');
+ini_set('session.save_path', '/tmp');
+ini_set('session.use_only_cookies', '1');
+ini_set('session.gc_maxlifetime', '3600');
 
 include_once "functions/DelDirectoryFnc.php";
 include_once "functions/ParamLibFnc.php";
